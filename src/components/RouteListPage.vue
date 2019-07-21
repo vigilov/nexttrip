@@ -31,7 +31,7 @@
             return {
                 places: [],
                 maxDistance: 20,
-                maxPlaces: 5,
+                maxPlaces: 9,
             }
         },
         components: {

@@ -49,11 +49,10 @@
                         break
                     }
 
+                    let winner = null;
                     let nearestLocation = null;
                     for (let i = 1; i < locations.length; i ++) {
-
-                        debugger
-                        if (usedLocations[location.title] != null) {
+                        if (usedLocations[locations[i].title] != null) {
                             continue
                         }
                         if (usedLocations.length === locations.length - 1) {
@@ -70,15 +69,17 @@
                         if (currentDistance < lastNearestDistance) {
                             usedLocations[locations[i].title] = locations[i];
                             lastLocation = locations[i];
+                            winner = locations[i];
 
                             break;
                         }
                     }
 
-                    debugger
+                    if (winner === null && nearestLocation !== null) {
+                        usedLocations[nearestLocation.title] = nearestLocation;
+                        lastLocation = nearestLocation;
+                    }
                 }
-
-                console.log(Object.values(usedLocations));
 
                 return Object.values(usedLocations);
             },
@@ -90,7 +91,6 @@
                 };
 
                 directionsService.route(request, (result, status) => {
-                    console.log('status', status);
                     if (status === google.maps.DirectionsStatus.OK) {
                         const directionsDisplay = new google.maps.DirectionsRenderer();
 
