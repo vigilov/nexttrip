@@ -51,7 +51,15 @@
                     .filter(place => place.selected)
                     .map(place => `${place.title}$__$${place.location.lat}$__$${place.location.lng}`);
 
-                this.$router.push({name: 'route', query: { location: places }})
+                if (places.length < 2) {
+                    this.$bvToast.toast(`Please select minimum two locations`, {
+                        title: 'Error',
+                        variant: 'danger',
+                        autoHideDelay: 5000
+                    })
+                } else {
+                    this.$router.push({name: 'route', query: { location: places }})
+                }
             },
             loadRouteList(name, location) {
                 this.$http.get(
