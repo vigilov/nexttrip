@@ -1,5 +1,5 @@
 <template>
-    <div class="d-center">
+    <div>
         <div class="tile" v-for="place in places">
             <div class="thumbnails">
                 <img v-for="top in place.topPosts" :src="top.node.thumbnail_src" class="thumbnail"/>

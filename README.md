@@ -9,3 +9,7 @@ What our project represents:
   - In our service user can see the most interesting places with a top instagram photo close to him and build a route on them
   - In the future we can add category selection, for example, filters: "bars close to me" or "galleries close to me" or something else
   - We will provide a link below each photo to the owner’s instagram account.
+  
+### Scenario of using
+
+[Video](https://yadi.sk/i/etG8Eob-cQ8VJg)

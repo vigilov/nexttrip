@@ -2,7 +2,7 @@
     <div id="app">
         <div class="d-center">
 
-            <div class="logo">
+            <div class="logo" @click="toOverview()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="77" height="19" viewBox="0 0 77 19" fill="none"
                      class="mdl-js">
                     <path d="M8.28901 0.999989H11.489V15H9.08901L3.68901 7.39999V15H0.489014V0.999989H2.88901L8.28901 8.59999V0.999989Z"
@@ -33,6 +33,11 @@
 <script>
     export default {
         name: 'app',
+        methods: {
+            toOverview() {
+                this.$router.push({name: "overview"})
+            }
+        }
     }
 </script>
 
@@ -55,6 +60,7 @@
     }
 
     .logo {
+        cursor: pointer;
         margin-bottom: 1rem;
     }
 
