@@ -50,7 +50,7 @@
     .d-center {
         padding: 1rem;
         margin: 0 auto;
-        width: 40rem;
+        max-width: 40rem;
 
     }
 
